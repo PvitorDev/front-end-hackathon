@@ -5,7 +5,7 @@ import Radio from "@mui/material/Radio";
 import { toast } from "react-toastify";
 import { setLocalItem } from '../../utils/localStorage'
 
-export function Login() {
+export function Login({ open, handleclose }) {
   const [handleForm, setHandleForm] = useState(0);
   const [open, setOpen] = useState(false);
   const [formCad, setFormCad] = useState({
