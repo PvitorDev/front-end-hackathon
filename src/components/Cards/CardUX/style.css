@@ -1,0 +1,25 @@
+.paidCharges-box {
+    display: flex;
+    width: 360px;
+    height: 111px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+}
+
+
+
+.paid-values {
+    font-family: 'Montserrat', sans-serif;
+    margin: 20px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-weight: 700;
+}
+
+.paid-values span {
+    font-size: 18px;
+}
