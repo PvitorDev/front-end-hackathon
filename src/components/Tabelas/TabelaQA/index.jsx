@@ -60,7 +60,7 @@ export default function TabelaQA() {
                             <TableRow key={row.id}>
                                 <TableCell sx={{
                                     maxWidth: '100px',
-                                    paddin: '5px'
+                                    padding: '5px'
                                 }}>{row.titulo}</TableCell>
                                 <TableCell>{row.criador_nome}</TableCell>
                                 <TableCell>{row.tipo}</TableCell>
