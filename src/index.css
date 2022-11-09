@@ -1,0 +1,58 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+#root {
+    text-align: center;
+    height: 100vh;
+}
+
+::-ms-reveal {
+    display: none;
+}
+
+button {
+    all: initial;
+    cursor: pointer;
+}
+
+.hover-btn-one:hover {
+    background-color: #f91a91;
+}
+
+.hover-btn-two:hover {
+    background-color: #e9e9ef;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+    scrollbar-width: auto;
+    scrollbar-color: #949494 #ffffff;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 6px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #949494;
+    border-radius: 10px;
+}

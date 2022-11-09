@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 function CardFullstack() {
     const navigate = useNavigate();
     function handleClick(){
-        navigate('/tabelaConteudos')
+        console.log("ok")
     }
     return (
         <div onClick={handleClick} className='box'>

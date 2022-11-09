@@ -2,10 +2,10 @@ import CreateOutlinedIcon from "@mui/icons-material/CreateOutlined";
 import DeleteTwoToneIcon from "@mui/icons-material/DeleteTwoTone";
 import { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
-import { PaginationControlled } from '../../components/pagination/index';
-import api from "../../services/api";
-import Favoritar from '../favoritar';
-import Loading from "../loading";
+import { PaginationControlled } from '../../../pagination/index';
+import api from "../../../../services/api";
+import Favoritar from '../../../favoritar';
+import Loading from "../../../loading";
 import "./style.css";
 
 export function TabelaConteudos() {
@@ -56,7 +56,7 @@ export function TabelaConteudos() {
             <th>Trilha</th>
           </tr>
         </thead>
-        {data.map((item) => (
+        {data && data.map((item) => (
           <tbody key={item.id}>
             <tr onClick={() => handleChangeLink(item.link)}>
               <td>{item.titulo}</td>

@@ -1,0 +1,25 @@
+.ConteudosTotals {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 20px;
+    color: #C5A605;
+    background-color: #FCF6DC;
+    border-radius: 10px;
+}
+
+.container-table-qa {
+    height: 360px;
+}
+
+.container-table-qa p {
+    font-family: 'Nunito', sans-serif;
+    color: #DA0175;
+    font-size: 15px;
+    margin-top: 6px;
+}
+
+.container-table-qa a {
+    color: #DA0175;
+}
