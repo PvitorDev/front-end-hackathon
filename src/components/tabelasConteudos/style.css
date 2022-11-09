@@ -2,13 +2,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 40px;
-    height: 20px;
-    color: #1FA7AF;
-    background-color: #EEF6F6;
+    width: 20px;
+        height: 10px;
+        color: #5b8183;
+        background-color: #8c0ce2;
     border-radius: 10px;
+    margin: auto;
 }
-
+.container-table-defaulters {
+    text-align: center;
+}
 .tableTitle-corrects {
     font-size: 18px;
     font-weight: 700;
@@ -16,12 +19,17 @@
     font-family: 'Montserrat';
 }
 
-.client-icon-corrects {
-    display: flex;
-    align-items: center;
-    gap: 5px;
+a {
+    list-style: none;
+    text-decoration: none;
 }
 
 .css-1ex1afd-MuiTableCell-root {
     font-family: 'Nunito';
+    text-align: center;
+    
+    }
+    
+    .container-table-defaulters {
+        margin: auto;
 }

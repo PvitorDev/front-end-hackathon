@@ -7,7 +7,7 @@ import {TabelaConteudos} from '../src/components/tabelasConteudos'
 function ProtectedRoutes({ children }) {
     const isAuthenticated = getLocalItem('token');
 
-    return isAuthenticated ? children : <Navigate to='/home' />
+    return isAuthenticated ? children : <Navigate to='/login' />
 }
 
 const PreventDuplicatedLoginRoutes = ({ children }) => {
@@ -25,8 +25,7 @@ export function MainRoutes() {
             } />
              <Route path='/tabelaConteudos' element={
                     <TabelaConteudos />
-            } />
-
+                } />
         </Routes>
     )
 }

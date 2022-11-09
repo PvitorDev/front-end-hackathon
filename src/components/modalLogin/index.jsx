@@ -25,7 +25,7 @@ export function Login() {
       if (form[i] == "") {
         return toast.error("Preencham todos os campos");
       }
-    }
+    } 
     try {
       const  {data}  = await api.post("/login", {
         email: form.email,
@@ -36,6 +36,7 @@ export function Login() {
      setLocalItem("nome_usuario", data.userData.nome);
      setLocalItem("email_usuario", data.userData.email);
      setLocalItem("trilha_usuario", data.userData.trilha);
+     setLocalItem("admin_usuario", data.userData.admin);
      toast.success("Login realizado");
     } catch (error) {
       return toast.error(error.response.data.mensagem);
@@ -75,7 +76,6 @@ export function Login() {
       toast.success("Cadastro realizado com sucesso");
       changeLogin();
     } catch (error) {
-      console.log(error);
       return toast.error(error.response.data.mensagem);
     }
   }
