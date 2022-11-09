@@ -7,7 +7,9 @@
     background-size: 1450px 50px;
 
 }
-
+.like:hover {
+    opacity: 0.6;
+}
 .like.liked {
     animation: like;
     animation-duration: 1s;

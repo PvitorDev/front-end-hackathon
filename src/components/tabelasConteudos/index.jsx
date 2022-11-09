@@ -1,30 +1,23 @@
-import { useState, useEffect } from "react";
-import {
-  Table,
-  TableHead,
-  TableBody,
-  TableRow,
-  TableCell,
-  Paper,
-  TableContainer,
-} from "@mui/material";
-import {Content} from '../pagination'
-import "./style.css";
-import DeleteTwoToneIcon from "@mui/icons-material/DeleteTwoTone";
 import CreateOutlinedIcon from "@mui/icons-material/CreateOutlined";
-import Favoritar from "../favoritar";
+import DeleteTwoToneIcon from "@mui/icons-material/DeleteTwoTone";
+import { useEffect, useState } from "react";
+import { useNavigate } from 'react-router-dom';
+import { PaginationControlled } from '../../components/pagination/index';
 import api from "../../services/api";
-import Loading from "../loading"
+import Favoritar from '../favoritar';
+import Loading from "../loading";
+import "./style.css";
+
 export function TabelaConteudos() {
   const [loading, setLoading] = useState(true);
   const [headers, setHeaders] = useState(0);
-  const [data,setData] = useState([])
-  
-  
+  const [data, setData] = useState([])
+  const navigate = useNavigate();
+  const [page, setContentPage] = useState(1)
 
-  useEffect(() => {
+  function getAllContent() {
     api
-      .get(`/postagem/conteudos/trilha/uxui?page=6`)
+      .get(`/postagem/conteudos/trilha/fullstack?page=${page}`)
       .then((response) => {
         setLoading(false);
         setData(response.data)
@@ -34,73 +27,56 @@ export function TabelaConteudos() {
         setLoading(false);
         console.log(error);
       });
-  }, []); 
+  }
+
+  function handleChangeLink(item) {
+    window.location.href = `${item}`;
+  }
+
+  useEffect(() => {
+    getAllContent();
+  }, [page]);
+
+  console.log(data)
 
   if (loading) {
-    return <Loading/>;
+    return <Loading />;
   }
   return (
-    <TableContainer
-      className="container-table-defaulters"
-      component={Paper}
-      sx={{
-        borderRadius: "20px",
-        maxWidth: "700px",
-      }}
-    >
-      <Table stickyHeader aria-label="sticky table">
-        <TableHead>
-          <TableRow>
-            <TableCell align="center" colSpan={10}>
-              <div className="clients-icon">
-                <h2>Fullstack</h2>
-              </div>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell>
-              <h4>Titulo</h4>
-            </TableCell>
-            <TableCell>
-              <h4>Criado por</h4>
-            </TableCell>
-            <TableCell>
-              <h4>Tipo</h4>
-            </TableCell>
-            <TableCell colSpan={10}>
-              <h4>Duração</h4>
-            </TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody
-          sx={{
-            maxWidth: "306px",
-          }}
-        >
-          {data &&
-            data.map((row) => (
-              <TableRow key={row.id}>
-                <TableCell>{row.titulo}</TableCell>
-                <TableCell>{row.criador_nome}</TableCell>
-                <TableCell>{row.tipo}</TableCell>
-                <TableCell>{row.duracao}</TableCell>
-                <TableCell>
-                  <Favoritar id_conteudos={row.id} />
-                </TableCell>
-                <TableCell>
-                  <CreateOutlinedIcon />
-                </TableCell>
-                <TableCell>
-                  <DeleteTwoToneIcon />
-                </TableCell>
-              </TableRow>
-            ))}
-        </TableBody>
-      </Table>
-      <p>
-       
-      </p>
-     
-    </TableContainer>
+
+    <div className="container-table">
+      <h2>Titulo</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Titulo</th>
+            <th>Criado Por</th>
+            <th>Tipo</th>
+            <th>Duração</th>
+            <th>Trilha</th>
+          </tr>
+        </thead>
+        {data.map((item) => (
+          <tbody key={item.id}>
+            <tr onClick={() => handleChangeLink(item.link)}>
+              <td>{item.titulo}</td>
+              <td>{item.criador_nome}</td>
+              <td>{item.tipo}</td>
+              <td>{item.duracao}</td>
+              <td>{item.trilha}</td>
+            </tr>
+            <div className="icons">
+              <Favoritar id_conteudos={item.id} />
+              <CreateOutlinedIcon />
+              <DeleteTwoToneIcon />
+            </div>
+          </tbody>
+        ))}
+      </table>
+      <div className='pagination'>
+        <PaginationControlled setContentPage={setContentPage} page={page} />
+      </div>
+    </div>
+
   );
 }

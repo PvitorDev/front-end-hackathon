@@ -1,35 +1,56 @@
-.correctsTotals {
+.container-table {
+    height: 100vh;
+    width: 85vw;
+}
+table {
+    background-color: rgb(255, 254, 254);
+    font-size: 15px;
+    border-collapse: collapse;
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+}
+table tr {
+    cursor: pointer;
+}
+
+table tr:hover {
+    background-color: rgb(160, 51, 51);
+}
+
+.container-table h2 {
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+        margin-top: 80px;
+    }
+    
+    table td {
+        text-align: center;
+        width: 170px;
+        height: 80px;
+        padding: 10px 0px 10px 0px;
+    }
+
+thead {
+    height: 80px;
+}
+table th {
+    width: 100px;
+}
+
+.pagination {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 20px;
-        height: 10px;
-        color: #5b8183;
-        background-color: #8c0ce2;
-    border-radius: 10px;
-    margin: auto;
-}
-.container-table-defaulters {
-    text-align: center;
-}
-.tableTitle-corrects {
-    font-size: 18px;
-    font-weight: 700;
-    margin-left: 8px;
-    font-family: 'Montserrat';
+    margin-top: 10px;
 }
 
-a {
-    list-style: none;
-    text-decoration: none;
-}
-
-.css-1ex1afd-MuiTableCell-root {
-    font-family: 'Nunito';
-    text-align: center;
-    
-    }
-    
-    .container-table-defaulters {
-        margin: auto;
+.icons {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    right: 0;
+    margin-top: -80px;
+    margin-right: -130px;
 }

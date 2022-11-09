@@ -1,33 +1,18 @@
-import * as React from 'react';
-import { Link, MemoryRouter, Route, Routes, useLocation } from 'react-router-dom';
 import Pagination from '@mui/material/Pagination';
-import PaginationItem from '@mui/material/PaginationItem';
+import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
+import * as React from 'react';
+import './style.css';
 
-export function Content({pageS,numPerPage}) {
-  const location = useLocation();
-  const query = new URLSearchParams(location.search);
-  const page = parseInt(query.get('page') || '1', 10 );
-  return (
-    <Pagination
-      page={page}
-      count={10}
-      renderItem={(item) => (
-        <PaginationItem
-          component={Link}
-          to={`/tabelaConteudos${item.page === 1 ? '' : `?page=${item.page}`}`}
-          {...item}
-        />
-      )}
-    />
-  );
-}
+export function PaginationControlled({ setContentPage, page }) {
+  const handleChange = (event, value) => {
+    setContentPage(value);
+  };
 
-export function PaginationLink() {
   return (
-    <MemoryRouter initialEntries={['/tabelaConteudos']} initialIndex={0}>
-      <Routes>
-        <Route path="*" element={<Content />} />
-      </Routes>
-    </MemoryRouter>
+    <Stack spacing={2}>
+      <Typography className='page'>Page: {page}</Typography>
+      <Pagination count={6} page={page} onChange={handleChange} />
+    </Stack>
   );
 }

@@ -4,10 +4,11 @@ import api from "../../services/api";
 import Radio from "@mui/material/Radio";
 import { toast } from "react-toastify";
 import { setLocalItem } from '../../utils/localStorage'
-
+import { useNavigate } from 'react-router-dom';
 export function Login() {
   const [handleForm, setHandleForm] = useState(0);
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
   const [formCad, setFormCad] = useState({
     nome: "",
     email: "",
@@ -38,6 +39,7 @@ export function Login() {
      setLocalItem("trilha_usuario", data.userData.trilha);
      setLocalItem("admin_usuario", data.userData.admin);
      toast.success("Login realizado");
+     navigate('/tabelaConteudos')
     } catch (error) {
       return toast.error(error.response.data.mensagem);
     }
