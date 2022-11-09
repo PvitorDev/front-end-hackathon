@@ -3,13 +3,13 @@ import Paper from '@mui/material/Paper';
 import './style.css'
 import CodeTwoToneIcon from '@mui/icons-material/CodeTwoTone';
 import { useNavigate } from 'react-router-dom';
-function Changes() {
+function CardFullstack() {
     const navigate = useNavigate();
     function handleClick(){
         navigate('/tabelaConteudos')
     }
     return (
-        <div onClick={handleClick} className='anticipatedcharges-box'>
+        <div onClick={handleClick} className='box'>
             <Paper elevation={2}
                 sx={{
                     display: 'flex',
@@ -19,7 +19,7 @@ function Changes() {
                     gap: '10px'
 
                 }}>
-                <div className='anticipated-values'>
+                <div className='card-values'>
                     <p>Fullstack Developer</p>
                 </div>
             </Paper>
@@ -27,4 +27,4 @@ function Changes() {
     );
 };
 
-export default Changes;
+export default CardFullstack;

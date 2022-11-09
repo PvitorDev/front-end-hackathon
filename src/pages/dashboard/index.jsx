@@ -1,8 +1,8 @@
 
 
-import Changes from '../../components/Cards/CardFullstack'
-import OverdueCharges from '../../components/Cards/CardQA'
-import PaidCharges from '../../components/Cards/CardUX'
+import CardFullstack from '../../components/Cards/CardFullstack'
+import CardQA from '../../components/Cards/CardQA'
+import CardUX from '../../components/Cards/CardUX'
 import './style.css'
 
 export function Home() {
@@ -14,9 +14,9 @@ export function Home() {
              
 
                       <div className='cards-top'>
-                          <PaidCharges />
-                          <OverdueCharges />
-                          <Changes />
+                          <CardFullstack />
+                          <CardQA />
+                          <CardUX/>
                       </div>
 
 

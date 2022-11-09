@@ -1,4 +1,4 @@
-.anticipatedcharges-box {
+.box {
     display: flex;
     width: 360px;
     height: 111px;
@@ -8,7 +8,7 @@
 }
 
 
-.anticipated-values {
+.card-values {
     font-family: 'Montserrat', sans-serif;
     display: flex;
     flex-direction: column;
@@ -17,6 +17,6 @@
     margin: 20px;
 }
 
-.anticipated-values span {
+.card-values span {
     font-size: 18px;
 }
