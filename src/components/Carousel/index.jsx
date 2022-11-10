@@ -7,8 +7,8 @@ function Carousel() {
   const carousel = useRef(null);
 
   useEffect(
-    (/**Banco de dados */) => {
-      fetch()
+    () => {
+      fetch("https://fcamara-api.herokuapp.com/youtube/Alura")
         .then((response) => response.json())
         .then(setData);
     },
@@ -31,14 +31,14 @@ function Carousel() {
     <div className="container">
       <div className="carousel" ref={carousel}>
         {data.map((item) => {
-          const { id, image, title, href } = item;
+          const { id, thumbnails, titulo, link } = item;
           return (
             <div className="item" key={id}>
               <div className="image">
-                <img src={image} alt={title} />
+                <img src={thumbnails} alt={titulo} />
               </div>
               <div className="title">
-                <a href={href}>{title}</a>
+                <a href={link}>{titulo}</a>
               </div>
             </div>
           );
