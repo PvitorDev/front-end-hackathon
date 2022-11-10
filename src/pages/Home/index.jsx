@@ -3,6 +3,7 @@
 import CardFullstack from '../../components/Cards/CardFullstack'
 import CardQA from '../../components/Cards/CardQA'
 import CardUX from '../../components/Cards/CardUX'
+import ResponsiveAppBar from '../../components/header'
 import TabelaFullstack from '../../components/Tabelas/TabelaFullstack'
 import TabelaQA from '../../components/Tabelas/TabelaQA'
 import TabelaUX from '../../components/Tabelas/TabelaUX'
@@ -15,7 +16,7 @@ export function Home() {
           <>
           <div className="container-cards-main">
           <section className="cardsMainPage">
-            <h1>OLA MUNDO</h1>
+                <ResponsiveAppBar/>
                 </section>
                     <div className='main'>
                       <div className='cards-top'>

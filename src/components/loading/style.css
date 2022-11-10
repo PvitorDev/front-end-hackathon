@@ -1,17 +1,19 @@
 html,
 body {
     height: 100%;
+    overflow-y: hidden;
 }
 
 body {
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+    overflow-y: hidden;
 }
 
 .spinner {
     animation: rotator 1.4s linear infinite;
+    overflow-y: hidden;
 }
 
 @keyframes rotator {
@@ -29,6 +31,7 @@ body {
     stroke-dashoffset: 0;
     transform-origin: center;
     animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
+    overflow-y: hidden;
 }
 
 @keyframes colors {

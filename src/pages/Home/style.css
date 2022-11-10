@@ -5,7 +5,7 @@
     align-items: left;
     position: relative;
     min-width: 100vw;
-        background-color: #F8F8F9;
+    background-color: #F8F8F9;
 }
 
 .cardsMainPage {
@@ -13,11 +13,11 @@
     flex-direction: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
+    margin: 0 auto;
 }
 
 .container-cards-main {
-    width: 90%;
+    width: 100%;
 }
 
 .main {
