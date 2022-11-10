@@ -1,15 +1,21 @@
 .login-page {
     width: 360px;
-    padding: 8% 0 0;
+    padding: 15% 0 0;
     margin: auto 0;
     overflow-x: hidden;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     z-index: 10;
-    border-radius: 2%;
-
+    position: fixed;
+        background-color: rgba(3, 3, 3, 0.5);
 }
-
+.close-icon {
+    position: absolute;
+    right: 0;
+    margin-top: -35px;
+    margin-right: 10px;
+    cursor: pointer;
+}
 .form {
     position: relative;
     z-index: 1;

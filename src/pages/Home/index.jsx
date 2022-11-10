@@ -1,6 +1,6 @@
-
-
+import { Login } from '../../components/modalLogin'
 import CardFullstack from '../../components/Cards/CardFullstack'
+import { useState } from 'react'
 import CardQA from '../../components/Cards/CardQA'
 import CardUX from '../../components/Cards/CardUX'
 import ResponsiveAppBar from '../../components/header'
@@ -11,27 +11,30 @@ import './style.css'
 
 export function Home() {
 
+  const [isActive, setIsActive] = useState(false)
+
   return (
-      <main className="homeContent">
-          <>
-          <div className="container-cards-main">
+    <main className="homeContent">
+      <>
+        <div className="container-cards-main">
           <section className="cardsMainPage">
-                <ResponsiveAppBar/>
-                </section>
-                    <div className='main'>
-                      <div className='cards-top'>
-                          <CardFullstack />
-                          <CardQA />
-                          <CardUX/>
-                      </div>
-                      <div className='cards-main'>
-                        <TabelaFullstack/>
-                        <TabelaQA/>
-                        <TabelaUX/>
-                    </div>
-                    </div>
-                    </div>
-          </>
-      </main>
+            <ResponsiveAppBar setIsActive={setIsActive} />
+          </section>
+          <div className='main'>
+            <div className='cards-top'>
+              <CardFullstack />
+              <CardQA />
+              <CardUX />
+            </div>
+            <div className='cards-main'>
+              <TabelaFullstack />
+              <TabelaQA />
+              <TabelaUX />
+            </div>
+          </div>
+        </div>
+        {isActive && <Login setIsActive={setIsActive} />}
+      </>
+    </main>
   )
 }

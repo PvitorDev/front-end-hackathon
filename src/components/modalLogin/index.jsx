@@ -2,10 +2,12 @@ import { useState } from "react";
 import "./style.css";
 import api from "../../services/api";
 import Radio from "@mui/material/Radio";
+import closeIcon from '../../assets/closeIcon.svg'
 import { toast } from "react-toastify";
 import { setLocalItem } from '../../utils/localStorage'
 import { useNavigate } from 'react-router-dom';
-export function Login() {
+
+export function Login({ setIsActive }) {
   const [handleForm, setHandleForm] = useState(0);
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
@@ -26,20 +28,20 @@ export function Login() {
       if (form[i] == "") {
         return toast.error("Preencham todos os campos");
       }
-    } 
+    }
     try {
-      const  {data}  = await api.post("/login", {
+      const { data } = await api.post("/login", {
         email: form.email,
         senha: form.senha,
       });
-     setLocalItem("token", data.token);
-     setLocalItem("usuario_id", data.userData.id);
-     setLocalItem("nome_usuario", data.userData.nome);
-     setLocalItem("email_usuario", data.userData.email);
-     setLocalItem("trilha_usuario", data.userData.trilha);
-     setLocalItem("admin_usuario", data.userData.admin);
-     toast.success("Login realizado");
-     navigate('/tabelaConteudos')
+      setLocalItem("token", data.token);
+      setLocalItem("usuario_id", data.userData.id);
+      setLocalItem("nome_usuario", data.userData.nome);
+      setLocalItem("email_usuario", data.userData.email);
+      setLocalItem("trilha_usuario", data.userData.trilha);
+      setLocalItem("admin_usuario", data.userData.admin);
+      toast.success("Login realizado");
+      navigate('/tabelaConteudos')
     } catch (error) {
       return toast.error(error.response.data.mensagem);
     }
@@ -85,6 +87,7 @@ export function Login() {
   return (
     <div className="login-page">
       <div className="form">
+        <img onClick={() => setIsActive(false)} className="close-icon" src={closeIcon} />
         {handleForm === 1 && (
           <form onSubmit={handleRegister} className="register-form">
             <input

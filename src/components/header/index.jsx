@@ -14,9 +14,9 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 
 const pages = ['Produtos', 'PAGE', 'Blog'];
-const settings = ['Profile',  'Logout'];
+const settings = ['Profile', 'Logout'];
 
-function ResponsiveAppBar() {
+function ResponsiveAppBar({ setIsActive }) {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
   const handleOpenNavMenu = (event) => {
@@ -30,9 +30,15 @@ function ResponsiveAppBar() {
     setAnchorElNav(null);
   };
 
-  const handleCloseUserMenu = () => {
+  const handleCloseUserProfile = () => {
+    setAnchorElUser(null);
+    setIsActive(true)
+  };
+
+  const handleCloseUserLogout = () => {
     setAnchorElUser(null);
   };
+
 
   return (
     <AppBar position="static">
@@ -54,7 +60,7 @@ function ResponsiveAppBar() {
               textDecoration: 'none',
             }}
           >
-            PRIME
+            LOGO
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -144,13 +150,14 @@ function ResponsiveAppBar() {
                 horizontal: 'right',
               }}
               open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
+              onClose={handleCloseUserLogout}
             >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
+              <MenuItem onClick={handleCloseUserProfile}>
+                <Typography textAlign="center">{settings[0]}</Typography>
+              </MenuItem>
+              <MenuItem onClick={handleCloseUserLogout}>
+                <Typography textAlign="center">{settings[1]}</Typography>
+              </MenuItem>
             </Menu>
           </Box>
         </Toolbar>
