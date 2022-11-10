@@ -37,7 +37,6 @@ export function TabelaConteudos() {
     getAllContent();
   }, [page]);
 
-  console.log(data)
 
   if (loading) {
     return <Loading />;

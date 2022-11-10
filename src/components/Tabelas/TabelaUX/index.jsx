@@ -30,6 +30,9 @@ export default function TabelaUX() {
       if (loading) {
         return <Loading/>;
       }
+      function handleLink(item){
+        window.location.href = `${item}`;
+      }
     return (
         <TableContainer className='container-table-Ux' component={Paper}
             sx={{
@@ -58,7 +61,7 @@ export default function TabelaUX() {
                     }}>
                     {
                       data && data.map(row => (
-                            <TableRow key={row.id}>
+                            <TableRow key={row.id} onClick={() =>handleLink(row.link)}>
                                 <TableCell sx={{
                                     maxWidth: '100px',
                                     padding: '5px'

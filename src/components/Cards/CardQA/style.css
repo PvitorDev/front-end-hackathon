@@ -1,6 +1,5 @@
-.box {
+.boxQA {
     display: flex;
-    width: 360px;
     height: 111px;
     align-items: center;
     justify-content: center;
@@ -9,16 +8,14 @@
 }
 
 
-.card-values {
-    overflow-x: hidden;
+.card-valuesQA {
     font-family: 'Montserrat', sans-serif;
     display: flex;
     flex-direction: column;
     gap: 5px;
     font-weight: 700;
-    margin: 20px;
 }
 
-.card-values span {
+.card-valuesQA span {
     font-size: 18px;
 }

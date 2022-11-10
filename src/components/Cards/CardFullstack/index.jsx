@@ -9,17 +9,17 @@ function CardFullstack() {
         console.log("ok")
     }
     return (
-        <div onClick={handleClick} className='box'>
+        <div onClick={handleClick} className='boxF'>
             <Paper elevation={2}
                 sx={{
                     display: 'flex',
                     backgroundColor: '#9417EB',
-                    padding: '23px 40px',
+                    padding: '13px 25px',
                     borderRadius: '10px',
                     gap: '10px'
 
                 }}>
-                <div className='card-values'>
+                <div className='card-valuesF'>
                     <p>Fullstack Developer</p>
                 </div>
             </Paper>

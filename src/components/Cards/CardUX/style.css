@@ -1,4 +1,4 @@
-.box {
+.boxUx {
     display: flex;
     width: 360px;
     height: 111px;
@@ -9,15 +9,15 @@
 }
 
 
-.card-values {
+.card-valuesUx {
     font-family: 'Montserrat', sans-serif;
+    margin-left: 20px;
     display: flex;
     flex-direction: column;
     gap: 5px;
     font-weight: 700;
-    margin: 20px;
 }
 
-.card-values span {
+.card-valuesUx span {
     font-size: 18px;
 }

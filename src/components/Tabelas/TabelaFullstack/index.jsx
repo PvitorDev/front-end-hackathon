@@ -5,7 +5,7 @@ import {
   TableRow,
   TableCell,
   Paper,
-  TableContainer,
+  TableContainer,Link
 } from "@mui/material";
 import "./style.css";
 import { useState, useEffect } from "react";
@@ -35,6 +35,9 @@ export default function TabelaFullstack() {
 
   if (loading) {
     return <Loading />;
+  }
+  function handleLink(item){
+    window.location.href = `${item}`;
   }
   return (
     <TableContainer
@@ -73,15 +76,15 @@ export default function TabelaFullstack() {
           }}
         >
           {data &&data.map((row) => (
-            <TableRow key={row.id}>
-              <TableCell
+            <TableRow key={row.id} onClick={() =>handleLink(row.link)}>
+              <TableCell 
                 sx={{
                   maxWidth: "100px",
                   padding: "5px",
                 }}
               >
                 {row.titulo}
-              </TableCell>
+              </TableCell >
               <TableCell>{row.criador_nome}</TableCell>
               <TableCell>{row.tipo}</TableCell>
             </TableRow>

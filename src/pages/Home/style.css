@@ -5,7 +5,7 @@
     align-items: left;
     position: relative;
     min-width: 100vw;
-    background-color: #F8F8F9;
+    background-color: #e4e4e9;
 }
 
 .cardsMainPage {
@@ -13,7 +13,6 @@
     flex-direction: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto;
 }
 
 .container-cards-main {
@@ -32,7 +31,7 @@
 .cards-top {
     display: flex;
     justify-content: center;
-    gap: 0;
+    gap: 32px;
     
     }
     

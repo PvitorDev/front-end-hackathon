@@ -1,0 +1,132 @@
+.font-nunito {
+    font-family: 'Nunito', sans-serif;
+}
+
+.display-justify-align-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-section-header {
+    width: 99%;
+    margin-top: 50px;
+}
+
+.container-customers {
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    background-color: #e4e4e9;
+
+}
+
+
+.container-section-header {
+    width: 88%;
+    height: 100%;
+    margin-top: 50px;
+}
+
+.container-header-customers {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.title-customers {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    font-size: 15px;
+    margin-top: 21px;
+}
+
+.container-add {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.add-customers {
+    background-color: #DA0175;
+    width: 230px;
+    height: 33px;
+    border-radius: 10px;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.filter-customers {
+    display: flex;
+    justify-content: center;
+    width: 45px;
+    height: 40px;
+    background-color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+.container-table-customers table {
+    font-size: 13px;
+    width: 82%;
+    background-color: rgb(254, 254, 254);
+    border-radius: 30px;
+    padding: 20px 50px;
+    height: 200px;
+    margin-top: 30px;
+}
+
+.container-table-customers table th {
+    margin-bottom: 20px;
+}
+
+.container-table-customers table td {
+    text-align: center;
+    border-top: 1px solid #E0E0E0;
+    color: #747488;
+    height: 50px;
+    width: 200px;
+}
+
+.itemsConteudos:hover {
+    background-color: rgb(255, 123, 0);
+}
+
+.order-customers {
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.addCharge-customers {
+    flex-direction: column;
+    color: #01da25;
+    font-size: 8px;
+    cursor: pointer;
+    height: 40px;
+}
+
+.status-client-ok {
+    color: #ff8000;
+    background-color: #EEF6F6;
+    border-radius: 8px;
+    height: 20px;
+    font-weight: bold;
+}
+
+.status-client-defaulter {
+    color: #971D1D;
+    background-color: #ffefef;
+    border-radius: 8px;
+    height: 20px;
+    font-weight: bold;
+}

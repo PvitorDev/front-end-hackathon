@@ -1,7 +1,8 @@
-.box {
+.boxF {
     display: flex;
-    width: 260px;
-        height: 101px;
+    width: 360px;
+        margin-left: 50px;
+        height: 111px;
     align-items: center;
     justify-content: center;
     cursor: pointer;
@@ -9,17 +10,14 @@
 }
 
 
-.card-values {
-    overflow-x: hidden;
+.card-valuesF {
     font-family: 'Montserrat', sans-serif;
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 5px;
     font-weight: 700;
-    overflow-y: hidden;
-    margin: 10px;
 }
 
-.card-values span {
+.card-valuesF span {
     font-size: 18px;
 }
