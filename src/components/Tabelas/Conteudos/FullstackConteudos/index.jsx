@@ -10,9 +10,7 @@ import "./style.css";
 
 export function TabelaConteudos() {
   const [loading, setLoading] = useState(true);
-  const [headers, setHeaders] = useState(0);
   const [data, setData] = useState([])
-  const navigate = useNavigate();
   const [page, setContentPage] = useState(1)
 
   function getAllContent() {
@@ -21,7 +19,6 @@ export function TabelaConteudos() {
       .then((response) => {
         setLoading(false);
         setData(response.data)
-        setHeaders(response.headers["x-total-counts"]);
       })
       .catch((error) => {
         setLoading(false);
@@ -73,7 +70,7 @@ export function TabelaConteudos() {
         ))}
       </table>
       <div className='pagination'>
-        <PaginationControlled setContentPage={setContentPage} page={page} />
+        <PaginationControlled setContentPage={setContentPage} page={page} count={6} />
       </div>
     </div>
 

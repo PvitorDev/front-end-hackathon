@@ -1,5 +1,5 @@
 .font-nunito {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Nunito', sans-serif;
 }
 
 .display-justify-align-center {
@@ -25,7 +25,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-bottom: 50px;
 }
 .container-section-header {
     width: 88%;

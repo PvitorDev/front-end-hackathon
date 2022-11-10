@@ -4,15 +4,15 @@ import Typography from '@mui/material/Typography';
 import * as React from 'react';
 import './style.css';
 
-export function PaginationControlled({ setContentPage, page }) {
+export function PaginationControlled({ setContentPage, page , count}) {
   const handleChange = (event, value) => {
     setContentPage(value);
   };
 
   return (
     <Stack spacing={2}>
-      <Typography className='page'>Page: {page}</Typography>
-      <Pagination count={6} page={page} onChange={handleChange} />
+      <Typography className='page'>Página: {page}</Typography>
+      <Pagination count={count} page={page} onChange={handleChange} />
     </Stack>
   );
 }

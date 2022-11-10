@@ -1,38 +1,39 @@
 import { useState, useEffect } from "react";
-import Loading from "../../../loading";
 import { PaginationControlled } from "../../../pagination";
-import api from '../../../../services/api'
+
 import './style.css'
 export function TabelaPrincipal(){
-const [loading, setLoading] = useState(true);
-  const [data, setData] = useState([])
-  const [page, setContentPage] = useState(1)
-
-  function getAllContent() {
-    api
-      .get(`/postagem/conteudos/trilha/fullstack?page=${page}`)
-      .then((response) => {
-        setLoading(false);
-        setData(response.data)
-      })
-      .catch((error) => {
-        setLoading(false);
-        console.log(error);
-      });
-  }
-
-  function handleChangeLink(item) {
-    window.location.href = `${item}`;
-  }
-
-  useEffect(() => {
-    getAllContent();
-  }, [page]);
-
-
-  if (loading) {
-    return <Loading />;
-  }
+    const tableData = [
+        {
+            nome: 'Sara Silva',
+           cpf:21123123131, 
+            id: 565436136,
+            telefone:2121312,
+            email: 'R$ '
+        },
+        {
+            nome: 'Carlos Prado',
+           cpf:21123123131, 
+            id: 565462136,
+            telefone:2121312,
+            email: 'R$ '
+        },
+        {
+            nome: 'Lara Brito',
+           cpf:21123123131, 
+            id: 5654546136,
+            telefone:2121312,
+            email: 'R$ '
+        },
+        {
+            nome: 'Soraia Neves',
+           cpf:21123123131, 
+            id: 565456136,
+            telefone:2121312,
+            email: 'R$ '
+        },
+    ]
+    const [page, setContentPage] = useState(1)
     return(
             <div className='container-customers'>
     
@@ -64,20 +65,20 @@ const [loading, setLoading] = useState(true);
                                 </tr>
                             </thead>
     
-                            {data && data.map((item) => (
-                                <tbody key={item.id} onClick={()=>handleChangeLink(item.link)}>
-                                    <tr className="itemsConteudos">
-                                        <td>{item.titulo}</td>
-                                        <td>{item.criador_nome}</td>
-                                        <td>{item.trilha}</td>
-                                        <td>{item.duracao}</td>
+                            {tableData.map((item) => (
+                                <tbody key={item.id}>
+                                    <tr className="itemsConteudos" onClick={() => setClientData(item)}>
+                                        <td>{item.nome}</td>
+                                        <td>{item.cpf}</td>
+                                        <td>{item.email}</td>
+                                        <td>{item.telefone}</td>
                                         <td>
                                             <div className='status-client-ok display-justify-align-center'>
                                                 Em dia
                                             </div>
                                         </td>
                                         <td>
-                                            <div  className='addCharge-customers display-justify-align-center'>
+                                            <div onClick={() => handleChangeAddCharge(item)} className='addCharge-customers display-justify-align-center'>
                                                 Cobrança
                                             </div>
                                         </td>
