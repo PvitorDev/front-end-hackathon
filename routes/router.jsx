@@ -2,8 +2,9 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import { Login } from '../src/components/modalLogin';
 import { getLocalItem } from '../src/utils/localStorage';
 import {Home} from '../src/pages/Home'
-import {TabelaConteudos} from '../src/components/Tabelas/Conteudos/FullstackConteudos'
-import { TabelaPrincipal } from '../src/components/Tabelas/Conteudos/TabelaPrincipal';
+import { ConteudosQA } from '../src/components/Tabelas/Conteudos/QA';
+import {ConteudosFullstack} from '../src/components/Tabelas/Conteudos/Fullstack';
+import { ConteudosUX } from '../src/components/Tabelas/Conteudos/UX';
 function ProtectedRoutes({ children }) {
     const isAuthenticated = getLocalItem('token');
 
@@ -17,10 +18,10 @@ export function MainRoutes() {
             <Route path='/' element={
                 <Home/>}
             />
-            {<Route path='/tabelaConteudos' element={
-                    <TabelaConteudos />}
-            />}
-        <Route path='/home' element={<TabelaPrincipal/>} />
+           
+        <Route path='/trilha/fullstack' element={<ConteudosFullstack/>} />
+        <Route path='/trilha/qa' element={<ConteudosQA/>}/>
+        <Route path='/trilha/uxui' element={<ConteudosUX/>}/>
         <Route path= '/login' element={<Login/>} />
         </Routes>
 

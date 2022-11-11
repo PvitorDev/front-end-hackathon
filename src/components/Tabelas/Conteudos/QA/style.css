@@ -9,7 +9,7 @@
 }
 
 .container-section-header {
-    width: 99%;
+    width: 100%;
     margin-top: 50px;
 }
 
@@ -28,7 +28,7 @@
     padding-bottom: 50px;
 }
 .container-section-header {
-    width: 88%;
+    width: 100%;
     height: 100%;
     margin-top: 50px;
     justify-content: center;
@@ -56,7 +56,7 @@
 }
 
 .add-customers {
-    background-color: #DA0175;
+    background-color: #ff8503;
     width: 230px;
     height: 33px;
     border-radius: 10px;
@@ -106,7 +106,7 @@
 }
 
 .itemsConteudos:hover {
-    background-color: rgb(255, 123, 0);
+    background-color: rgb(229, 229, 229);
 }
 
 .order-customers {

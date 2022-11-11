@@ -1,14 +1,14 @@
 import { useState } from "react"
 import { toast } from "react-toastify";
 import api from "../../services/api";
-import { getLocalItem } from "../../utils/localStorage";
+import { getLocalItem, removeLocalItem, setLocalItem } from "../../utils/localStorage";
 import "./style.css"
 
 export default function Favoritar({id_conteudos}){
     const [favorito, setFavorito] = useState(false);
     const token = getLocalItem('token')
     const id = getLocalItem('usuario_id')
-   
+ 
     async function favoritar() {
       if(!token || !id){
        return toast.error("Você não está logado")
@@ -27,7 +27,6 @@ export default function Favoritar({id_conteudos}){
               toast.success("Removido dos favoritos");
             }
         } catch (error) {
-          console.log(error)
           return toast.error(error.response.data.mensagem);
         }
       }

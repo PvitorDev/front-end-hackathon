@@ -11,14 +11,19 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
-
+import orangelogo from '../../assets/image0.png'
 const pages = ['Produtos', 'PAGE', 'Blog'];
-const settings = ['Profile', 'Logout'];
-
-function ResponsiveAppBar({ setIsActive }) {
+const settings = ['Perfil', 'Logout'];
+import { clearLocalItem, getLocalItem } from '../../utils/localStorage';
+import './style.css'
+import { useNavigate } from 'react-router-dom';
+export default function ResponsiveAppBar({ setIsActive }) {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const nome_usuario = getLocalItem('nome_usuario')
+  const token = getLocalItem('token')
+  const navigate = useNavigate();
+
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -35,34 +40,20 @@ function ResponsiveAppBar({ setIsActive }) {
     setIsActive(true)
   };
 
+  const handleCloseUser = () => {
+    setAnchorElUser(null);
+    
+  };
   const handleCloseUserLogout = () => {
     setAnchorElUser(null);
+    clearLocalItem()
   };
 
-
   return (
-    <AppBar position="static">
+    <AppBar position="static" id='appBar'>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="/"
-            sx={{
-              mr: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            LOGO
-          </Typography>
-
+         <a href='/'> <img className='logoPrincipal' src={orangelogo} alt='Logo'/></a>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
@@ -92,6 +83,7 @@ function ResponsiveAppBar({ setIsActive }) {
                 display: { xs: 'block', md: 'none' },
               }}
             >
+
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">{page}</Typography>
@@ -99,7 +91,8 @@ function ResponsiveAppBar({ setIsActive }) {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          <a href='/'>
+          <img className='logoResponsivel' src={orangelogo} alt='Logo'/></a>
           <Typography
             variant="h5"
             noWrap
@@ -116,7 +109,6 @@ function ResponsiveAppBar({ setIsActive }) {
               textDecoration: 'none',
             }}
           >
-            LOGO
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
@@ -132,8 +124,8 @@ function ResponsiveAppBar({ setIsActive }) {
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+              <IconButton  sx={{ p: 0 }}>
+                {token ? <Avatar alt="Remy Sharp" onClick={handleOpenUserMenu} src="/static/images/avatar/2.jpg">PV</Avatar>   :  <Avatar onClick={handleCloseUserProfile} src="/broken-image.jpg" />}
               </IconButton>
             </Tooltip>
             <Menu
@@ -150,7 +142,7 @@ function ResponsiveAppBar({ setIsActive }) {
                 horizontal: 'right',
               }}
               open={Boolean(anchorElUser)}
-              onClose={handleCloseUserLogout}
+              onClose={handleCloseUser}
             >
               <MenuItem onClick={handleCloseUserProfile}>
                 <Typography textAlign="center">{settings[0]}</Typography>
@@ -165,4 +157,3 @@ function ResponsiveAppBar({ setIsActive }) {
     </AppBar>
   );
 }
-export default ResponsiveAppBar;

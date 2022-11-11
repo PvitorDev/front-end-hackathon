@@ -5,7 +5,7 @@ import {
   TableRow,
   TableCell,
   Paper,
-  TableContainer,Link
+  TableContainer
 } from "@mui/material";
 import "./style.css";
 import { useState, useEffect } from "react";
@@ -40,6 +40,7 @@ export default function TabelaFullstack() {
     window.location.href = `${item}`;
   }
   return (
+    
     <TableContainer
       className="container-table-fullstack"
       component={Paper}
@@ -93,7 +94,7 @@ export default function TabelaFullstack() {
       </Table>
       <p className="p">
         {" "}
-        <a  href="">Ver todos</a>
+        <a  href="/trilha/fullstack">Ver todos</a>
       </p>
     </TableContainer>
   );

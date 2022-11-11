@@ -72,30 +72,8 @@ export default function TabelaQA() {
                     }
                 </TableBody>
             </Table>
-            <p> <a href="">Ver todos</a></p>
+            <p> <a href="/trilha/qa">Ver todos</a></p>
         </TableContainer>
     )
 }
 
-const tableData = [
-    {
-        nome: 'Sara Silva',
-        id: 56546136,
-        valor: 'R$ ' + 2000
-    },
-    {
-        nome: 'Carlos Prado',
-        id: 56546136,
-        valor: 'R$ ' + 2000
-    },
-    {
-        nome: 'Lara Brito',
-        id: 56546136,
-        valor: 'R$ ' + 2000
-    },
-    {
-        nome: 'Soraia Neves',
-        id: 56546136,
-        valor: 'R$ ' + 2000
-    },
-]
