@@ -189,7 +189,7 @@ export  default function Editar({id_conteudo}){
             <label>QA</label>
 
             <Radio className="radioBtn"
-              checked={form.trilha === "QA"}
+              checked={form.trilha === "qa"}
               name="trilha"
               onChange={(e) =>
                 setForm({
@@ -198,11 +198,11 @@ export  default function Editar({id_conteudo}){
                 })
               }
               required
-              value="QA"
+              value="qa"
             />
             <label>UX/UI</label>
             <Radio className="radioBtn"
-              checked={form.trilha === "UX/UI"}
+              checked={form.trilha === "uxui"}
               name="trilha"
               onChange={(e) =>
                 setForm({
@@ -211,7 +211,7 @@ export  default function Editar({id_conteudo}){
                 })
               }
               required
-              value="UX/UI"
+              value="uxui"
             />
 
                 </div>
