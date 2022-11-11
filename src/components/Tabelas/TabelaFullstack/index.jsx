@@ -39,6 +39,9 @@ export default function TabelaFullstack() {
   function handleLink(item){
     window.location.href = `${item}`;
   }
+  function handleOtherPage(){
+    window.location.href ='/trilha/fullstack'
+  }
   return (
     
     <TableContainer
@@ -51,7 +54,7 @@ export default function TabelaFullstack() {
     >
       <Table stickyHeader aria-label="sticky table">
         <TableHead>
-          <TableRow>
+          <TableRow id='tableRow' onClick={handleOtherPage} >
             <TableCell align="center" colSpan={2}>
               <h2>Fullstack</h2>
             </TableCell>

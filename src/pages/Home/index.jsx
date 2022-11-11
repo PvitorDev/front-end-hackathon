@@ -21,11 +21,6 @@ export function Home() {
             <ResponsiveAppBar setIsActive={setIsActive} />
           </section>
           <div className='main'>
-            <div className='cards-top'>
-              <CardFullstack />
-              <CardQA />
-              <CardUX />
-            </div>
             <div className='cards-main'>
               <TabelaFullstack />
               <TabelaQA />

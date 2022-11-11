@@ -138,3 +138,11 @@
     height: 20px;
     font-weight: bold;
 }
+#stack {
+    width: 200px;
+}
+
+#stackBtn {
+    width: 50px;
+
+}

@@ -33,6 +33,9 @@ export default function TabelaUX() {
       function handleLink(item){
         window.location.href = `${item}`;
       }
+      function handleOtherPage(){
+        window.location.href ='/trilha/uxui'
+      }
     return (
         <TableContainer className='container-table-Ux' component={Paper}
             sx={{
@@ -41,7 +44,7 @@ export default function TabelaUX() {
             }}>
             <Table stickyHeader aria-label="sticky table">
                 <TableHead>
-                    <TableRow>
+                    <TableRow id='tableRow' onClick={handleOtherPage}>
                         <TableCell align="center" colSpan={2}>
                             <h2>UX/UI</h2>
                         </TableCell>

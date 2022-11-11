@@ -7,7 +7,7 @@ import { MainRoutes } from '../routes/router';
 import './index.css'
 ReactDOM.createRoot(document.getElementById('root')).render(
    <>
-    <ToastContainer autoClose={3000} />
+    <ToastContainer autoClose={1000} />
     <BrowserRouter>
       <MainRoutes />
     </BrowserRouter> 

@@ -9,6 +9,10 @@ import Favoritar from "../../../favoritar";
 import Deletar from "../../../deletar";
 import Editar from "../../../editar";
 import { getLocalItem } from "../../../../utils/localStorage";
+import FormHelperText from "@mui/material/FormHelperText";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
 export function ConteudosFullstack() {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
@@ -16,10 +20,22 @@ export function ConteudosFullstack() {
   const [isActive, setIsActive] = useState(false);
   const admin = getLocalItem("admin_usuario");
   const adm = JSON.parse(admin);
+  const [filter, setFilter] = useState("");
 
-  function getAllContent() {
+  const handleChange = async (event) => {
+    setFilter(event.target.value);
+  };
+  function getAllContent(mudança) {
+    let baseUrl;
+    if (mudança == "id") {
+      baseUrl = `/postagem/conteudos/trilha/fullstack?page=${page}&filter=id`;
+    } else if (mudança == "titulo") {
+      baseUrl = `/postagem/conteudos/trilha/fullstack?page=${page}&filter=titulo`;
+    } else {
+      baseUrl = `/postagem/conteudos/trilha/fullstack?page=${page}`;
+    }
     api
-      .get(`/postagem/conteudos/trilha/fullstack?page=${page}`)
+      .get(baseUrl)
       .then((response) => {
         setLoading(false);
         setData(response.data);
@@ -56,9 +72,30 @@ export function ConteudosFullstack() {
               >
                 <span className="">Adicionar Conteudos</span>
               </div>
+              <FormControl sx={{ m: 1, minWidth: 120 }}>
+                <Select
+                  value={filter}
+                  onChange={handleChange}
+                  displayEmpty
+                  inputProps={{ "aria-label": "Without label" }}
+                >
+                  <MenuItem value="" onClick={() => getAllContent()}>
+                    <em>Normal</em>
+                  </MenuItem>
+                  <MenuItem value="id" onClick={() => getAllContent("id")}>
+                    Mais recente
+                  </MenuItem>
+                  <MenuItem
+                    value="titulo"
+                    onClick={() => getAllContent("titulo")}
+                  >
+                    Titulo
+                  </MenuItem>
+                </Select>
+                <FormHelperText>Filtrar</FormHelperText>
+              </FormControl>
             </div>
           </div>
-
           <div className="container-table-customers font-nunito display-justify-align-center">
             <table className="tableCustomers">
               <thead>
@@ -83,7 +120,7 @@ export function ConteudosFullstack() {
                         {item.criador_nome}
                       </td>
                       <td onClick={() => handleChangeLink(item.link)}>
-                        {item.trilha}
+                        {item.tipo}
                       </td>
                       <td onClick={() => handleChangeLink(item.link)}>
                         {item.duracao}

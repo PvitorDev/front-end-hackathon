@@ -32,6 +32,9 @@ export default function TabelaQA() {
       function handleLink(item){
         window.location.href = `${item}`;
       }
+      function handleOtherPage(){
+        window.location.href ='/trilha/qa'
+      }
     return (
         <TableContainer className='container-table-qa' component={Paper}
             sx={{
@@ -40,7 +43,7 @@ export default function TabelaQA() {
             }}>
             <Table stickyHeader aria-label="sticky table">
                 <TableHead>
-                    <TableRow>
+                    <TableRow id='tableRow' onClick={handleOtherPage}> 
                         <TableCell align="center" colSpan={2}>
                             <h2>QA</h2>
                         </TableCell>
