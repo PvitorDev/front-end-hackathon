@@ -49,7 +49,11 @@ export default function ResponsiveAppBar({ setIsActive }) {
     clearLocalItem()
     window.location.reload()
   };
+  function formatName(name) {
+    const newName = name.substr(0, 2).toUpperCase();
 
+    return newName
+  }
   return (
     <AppBar position="static" id='appBar'>
       <Container maxWidth="xl">
@@ -126,7 +130,7 @@ export default function ResponsiveAppBar({ setIsActive }) {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton  sx={{ p: 0 }}>
-                {token ? <Avatar alt="Remy Sharp" onClick={handleOpenUserMenu} src="/static/images/avatar/2.jpg">PV</Avatar>   :  <Avatar onClick={handleCloseUserProfile} src="/broken-image.jpg" />}
+                {token ? <Avatar alt="Remy Sharp" onClick={handleOpenUserMenu} src="/static/images/avatar/2.jpg">{formatName(nome_usuario)}</Avatar>   :  <Avatar onClick={handleCloseUserProfile} src="/broken-image.jpg" />}
               </IconButton>
             </Tooltip>
             <Menu

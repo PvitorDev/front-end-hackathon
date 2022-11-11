@@ -106,7 +106,8 @@ export function ConteudosQA() {
                   <th>Tipo</th>
                   <th>Duração</th>
                   <th>Favoritar</th>
-                  {adm && <th>Opções</th>}
+                  {adm && <th>Excluir</th>}
+                  {adm && <th>Editar</th>}
                 </tr>
               </thead>
 
@@ -137,7 +138,7 @@ export function ConteudosQA() {
                       )}
                       {adm && (
                         <td>
-                          <Editar />
+                          <Editar id_conteudo={item.id} />
                         </td>
                       )}
                     </tr>

@@ -107,7 +107,8 @@ export function ConteudosUX() {
                   <th>Tipo</th>
                   <th>Duração</th>
                   <th>Favoritar</th>
-                  {adm && <th>Opções</th>}
+                  {adm && <th>Excluir</th>}
+                  {adm && <th>Editar</th>}
                 </tr>
               </thead>
 
@@ -138,7 +139,7 @@ export function ConteudosUX() {
                       )}
                       {adm && (
                         <td>
-                          <Editar />
+                          <Editar id_conteudo={item.id} />
                         </td>
                       )}
                     </tr>

@@ -8,8 +8,6 @@ import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import Stack from '@mui/material/Stack';
-import { useNavigate } from "react-router-dom";
 const style = {
   position: 'absolute',
   top: '50%',
@@ -17,13 +15,13 @@ const style = {
   transform: 'translate(-50%, -50%)',
   width: 400,
   bgcolor: 'background.paper',
-  border: '2px solid #000',
   boxShadow: 24,
   p: 4,
+  border:'none',
+    borderRadius:'20px',
 };
 
 export  default function Deletar({id_conteudo}){
-    const [deletado, setDeletado] = useState(false);
     const token = getLocalItem('token')
     const admin = getLocalItem("admin_usuario")
     const [open, setOpen] = useState(false);
