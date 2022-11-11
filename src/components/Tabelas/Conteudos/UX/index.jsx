@@ -13,6 +13,7 @@ import FormHelperText from "@mui/material/FormHelperText";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
+import AdicionarConteudo from "../../../adicionarConteudos";
 export function ConteudosUX() {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
@@ -67,12 +68,8 @@ export function ConteudosUX() {
             </div>
 
             <div className="container-add">
-              <div
-                onClick={() => openModalRegister()}
-                className="add-UX font-nunito display-justify-align-center"
-              >
-                <span className="">Adicionar Conteudos</span>
-              </div>
+            {adm && <AdicionarConteudo/>}
+              
               <FormControl sx={{ m: 1, minWidth: 120 }}>
                 <Select
                   value={filter}

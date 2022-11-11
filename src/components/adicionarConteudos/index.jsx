@@ -21,7 +21,7 @@ const style = {
   };
 import Box from '@mui/material/Box';
   import './style.css'
-export  default function Editar({id_conteudo}){
+export  default function AdicionarConteudo(){
     const token = getLocalItem('token')
     const admin = getLocalItem("admin_usuario")
     const [open, setOpen] = useState(false);
@@ -36,9 +36,15 @@ export  default function Editar({id_conteudo}){
       });
 
 
-    async function HandleAtualizar({id_conteudo}){
+    async function HandleAdicionar(e){
+        e.preventDefault()
+        for (let i in form) {
+            if (form[i] == "") {
+              return toast.error("Preencham todos os campos");
+            }
+          }
         try {
-            await api.put(`/postagem?id_conteudo=${id_conteudo}`,{
+            await api.post(`/postagem/conteudo`,{
                 titulo:form.titulo,
                 tipo: form.tipo,
                 trilha: form.trilha,
@@ -47,33 +53,23 @@ export  default function Editar({id_conteudo}){
                 },{ headers:{
                     'Authorization': `Bearer ${token}`
                   } })
-            toast.success("atualizado")
+            toast.success("Conteúdo adicionado")
             setTimeout((()=>window.location.reload()),2000)
         } catch (error) {
             console.log(error.response)
-            return toast.error(error);
+            return toast.error(error.response.mensagem);
         }
     }
-    async function editar(e){
-        e.preventDefault()
-        if(!token || !admin){
-            return toast.error("Você não está logado")
-        }
-        for (let i in form) {
-          if (form[i] == "") {
-            return toast.error("Preencham todos os campos");
-          }
-        }
-        try {
-          HandleAtualizar({id_conteudo})
-        } catch (error) {
-            return toast.error(error);
-        }
-    }
+   
  
     return(
         <>
-        <div ><img src={editIcon} onClick={handleOpen} alt="" /></div>
+             <div
+                onClick={handleOpen}
+                className="add-customers font-nunito display-justify-align-center"
+              >
+                <span className="">Adicionar Conteudos</span>
+              </div>
         <Modal
         keepMounted
           open={open}
@@ -83,14 +79,14 @@ export  default function Editar({id_conteudo}){
         >
              <Box sx={style}>
         <div className="modaEdit">
-             <h2>Atualizar conteudo</h2>
+             <h2>Adicionar Conteudo</h2>
              <img
              onClick={handleClose}
             src={CloseIcon}
              alt="Close Icon"
           className="closeIcon"
                             />
-             <form onSubmit={editar} className="modal-form-edit">
+             <form onSubmit={HandleAdicionar} className="modal-form-edit">
                 <div className="input-edit">
                     <span>Titulo*</span>
                     <input type="text" name='titulo' value={form.titulo}  onChange={(e) =>
@@ -238,7 +234,7 @@ export  default function Editar({id_conteudo}){
                 })
               }  placeholder='Titulo do conteudo'/>
                 </div>
-            {open && <button onClick={editar}  className="orange-btn">Atualizar</button>}
+            {open && <button onClick={HandleAdicionar}  className="orange-btn">Atualizar</button>}
              </form>
              </div>
              </Box>
