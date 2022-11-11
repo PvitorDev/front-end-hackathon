@@ -61,7 +61,7 @@ export default function TabelaUX() {
                     }}>
                     {
                       data && data.map(row => (
-                            <TableRow key={row.id} onClick={() =>handleLink(row.link)}>
+                            <TableRow id="tableMain"  key={row.id} onClick={() =>handleLink(row.link)}>
                                 <TableCell sx={{
                                     maxWidth: '100px',
                                     padding: '5px'

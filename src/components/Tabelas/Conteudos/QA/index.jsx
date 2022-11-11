@@ -44,23 +44,23 @@ const [loading, setLoading] = useState(true);
     return(
         <>
         <ResponsiveAppBar setIsActive={setIsActive}/>
-            <div className='container-customers'>
+            <div className='container-QA'>
     
                 <div className='container-section-header'>
-                    <div className='container-header-customers'>
-                        <div className='title-customers font-nunito'>
+                    <div className='container-header-QA'>
+                        <div className='title-QA font-nunito'>
                             <h1>QA Quality Assurance </h1>
                         </div>
     
                         <div className='container-add'>
-                            <div onClick={() => openModalRegister()} className='add-customers font-nunito display-justify-align-center'>
+                            <div onClick={() => openModalRegister()} className='add-QA font-nunito display-justify-align-center'>
                                 <span className='' >Adicionar Conteudos</span>
                             </div>
                         </div>
                     </div>
     
-                    <div className='container-table-customers font-nunito display-justify-align-center'>
-                        <table className="tableCustomers">
+                    <div className='container-table-QA font-nunito display-justify-align-center'>
+                        <table className="tableQA">
                             <thead>
                                 <tr >
                                     <th >
@@ -86,7 +86,7 @@ const [loading, setLoading] = useState(true);
                                         </td>
                                        
                                         {adm && 
-                                        <td><Deletar /></td> }
+                                        <td><Deletar id_conteudo={item.id} /></td> }
                                         {adm && <td>
                                         <Editar/>
                                         </td>  }

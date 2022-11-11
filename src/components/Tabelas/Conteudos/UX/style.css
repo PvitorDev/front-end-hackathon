@@ -13,7 +13,7 @@
     margin-top: 50px;
 }
 
-.container-customers {
+.container-UX {
     width: 100%;
     min-height: 100%;
     display: flex;
@@ -34,13 +34,13 @@
     justify-content: center;
 }
 
-.container-header-customers {
+.container-header-UX {
     display: flex;
     width: 100%;
     justify-content: space-around;
 }
 
-.title-customers {
+.title-UX {
     display: flex;
     align-items: center;
     gap: 22px;
@@ -55,7 +55,7 @@
     margin-top: 20px;
 }
 
-.add-customers {
+.add-UX {
     background-color: #ff8503;
     width: 230px;
     height: 33px;
@@ -66,7 +66,7 @@
     gap: 5px;
 }
 
-.filter-customers {
+.filter-UX {
     display: flex;
     justify-content: center;
     width: 45px;
@@ -82,7 +82,7 @@
 
 
 
-.container-table-customers table {
+.container-table-UX table {
     font-size: 13px;
     width: 82%;
     background-color: rgb(254, 254, 254);
@@ -93,11 +93,11 @@
 
 }
 
-.container-table-customers table th {
+.container-table-UX table th {
     margin-bottom: 20px;
 }
 
-.container-table-customers table td {
+.container-table-UX table td {
     text-align: center;
     border-top: 1px solid #E0E0E0;
     color: #747488;
@@ -109,12 +109,12 @@
     background-color: rgb(229, 229, 229);
 }
 
-.order-customers {
+.order-UX {
     margin-top: 20px;
     cursor: pointer;
 }
 
-.addCharge-customers {
+.addCharge-UX {
     flex-direction: column;
     color: #01da25;
     font-size: 8px;

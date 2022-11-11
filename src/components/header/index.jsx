@@ -47,6 +47,7 @@ export default function ResponsiveAppBar({ setIsActive }) {
   const handleCloseUserLogout = () => {
     setAnchorElUser(null);
     clearLocalItem()
+    window.location.reload()
   };
 
   return (

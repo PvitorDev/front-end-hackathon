@@ -44,23 +44,23 @@ const [loading, setLoading] = useState(true);
     return(
         <>
         <ResponsiveAppBar setIsActive={setIsActive}/>
-            <div className='container-customers'>
+            <div className='container-UX'>
     
                 <div className='container-section-header'>
-                    <div className='container-header-customers'>
-                        <div className='title-customers font-nunito'>
+                    <div className='container-header-UX'>
+                        <div className='title-UX font-nunito'>
                             <h1>UX/UI Design</h1>
                         </div>
     
                         <div className='container-add'>
-                            <div onClick={() => openModalRegister()} className='add-customers font-nunito display-justify-align-center'>
+                            <div onClick={() => openModalRegister()} className='add-UX font-nunito display-justify-align-center'>
                                 <span className='' >Adicionar Conteudos</span>
                             </div>
                         </div>
                     </div>
     
-                    <div className='container-table-customers font-nunito display-justify-align-center'>
-                        <table className="tableCustomers">
+                    <div className='container-table-UX font-nunito display-justify-align-center'>
+                        <table className="tableUX">
                             <thead>
                                 <tr >
                                     <th >

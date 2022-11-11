@@ -17,7 +17,7 @@ export default function TabelaFullstack() {
   const [data, setData] = useState([]);
   function getAllContent() {
     api
-      .get(`/postagem/conteudos/trilha/fullstack?page=5`)
+      .get(`/postagem/conteudos/trilha/fullstack?page=1`)
       .then((response) => {
         setLoading(false);
         setData(response.data);
@@ -77,7 +77,7 @@ export default function TabelaFullstack() {
           }}
         >
           {data &&data.map((row) => (
-            <TableRow key={row.id} onClick={() =>handleLink(row.link)}>
+            <TableRow id="tableMain" key={row.id} onClick={() =>handleLink(row.link)}>
               <TableCell 
                 sx={{
                   maxWidth: "100px",

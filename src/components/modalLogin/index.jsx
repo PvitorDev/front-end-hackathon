@@ -41,7 +41,7 @@ export function Login({ setIsActive }) {
       setLocalItem("trilha_usuario", data.userData.trilha);
       setLocalItem("admin_usuario", data.userData.admin);
       toast.success("Login realizado");
-      navigate('/')
+      setTimeout((()=>window.location.reload()),2000)
     } catch (error) {
       return toast.error(error.response.data.mensagem);
     }

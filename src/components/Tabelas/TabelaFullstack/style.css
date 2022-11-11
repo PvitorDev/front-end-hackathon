@@ -30,3 +30,10 @@
 .p {
     margin: 20px;
 }
+#tableMain {
+    cursor: pointer;
+}
+
+#tableMain:hover {
+    background-color: rgb(229, 229, 229);
+}
