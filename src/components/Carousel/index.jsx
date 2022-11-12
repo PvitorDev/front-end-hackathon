@@ -3,13 +3,13 @@ import "./style.css";
 import { HiChevronRight, HiChevronLeft } from "react-icons/hi";
 import api from "../../services/api";
 
-function Carousel() {
+function Carousel({canal}) {
   const [data, setData] = useState([]);
   const carousel = useRef(null);
 
   useEffect(() => {
     api
-      .get("/youtube/Alura")
+      .get(`/youtube/${canal}`)
       .then((response) => {
         setData(response.data);
       })

@@ -27,8 +27,26 @@ export function Home() {
               <TabelaQA />
               <TabelaUX />
             </div>
-          <Carousel/>
+         
+          
           </div>
+          <div >
+           
+           <h1>Playlist Orange Juice</h1>
+         <Carousel canal='Orange Juice'/>
+          </div>
+          <div className="carousel-Fcamara">
+           <h1>Playlist FCamara</h1>
+          <Carousel canal='FCamara'/>
+           </div>
+          <div >
+          <h1>Playlist Alura</h1>
+         <Carousel canal='Alura'/>
+          </div>
+           <div className="carousel-Fcamara">
+           <h1>Playlist Rocketseat</h1>
+          <Carousel canal='Rocketseat'/>
+           </div>
         </div>
         {isActive && <Login setIsActive={setIsActive} />}
       </>

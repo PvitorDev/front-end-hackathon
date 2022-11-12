@@ -7,7 +7,6 @@
     min-width: 100vw;
     background-color: #e4e4e9;
 }
-
 .cardsMainPage {
     display: flex;
     flex-direction: flex;
@@ -20,11 +19,10 @@
 }
 
 .main {
-    display: flex;
     flex-direction: column;
     gap: 12px;
-        margin-top: 12px;
-    height: 1000px;
+    margin-top: 12px;
+    height: 400px;
     margin-right: 24px;
 }
 
