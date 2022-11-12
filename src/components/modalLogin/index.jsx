@@ -112,7 +112,7 @@ export function Login({ setIsActive }) {
               onChange={(e) =>
                 setFormCad({
                   ...formCad,
-                  [e.target.name]: e.target.value.trim(),
+                  [e.target.name]: e.target.value,
                 })
               }
             />

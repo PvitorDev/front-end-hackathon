@@ -15,6 +15,7 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import AdicionarConteudo from "../../../adicionarConteudos";
 export function ConteudosFullstack() {
+
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
   const [page, setContentPage] = useState(1);
@@ -22,7 +23,7 @@ export function ConteudosFullstack() {
   const admin = getLocalItem("admin_usuario");
   const adm = JSON.parse(admin);
   const [filter, setFilter] = useState("");
-
+  const [headers,setHeaders]= useState(0)
   const handleChange = async (event) => {
     setFilter(event.target.value);
   };
@@ -40,6 +41,7 @@ export function ConteudosFullstack() {
       .then((response) => {
         setLoading(false);
         setData(response.data);
+        setHeaders(response.headers["x-total-count"])
       })
       .catch((error) => {
         setLoading(false);
@@ -123,7 +125,7 @@ export function ConteudosFullstack() {
                         {item.duracao}
                       </td>
                       <td>
-                        <Favoritar id_conteudos={item.id} />
+                        <Favoritar id_conteudos={item.id}  />
                       </td>
                       {adm && (
                         <td>
@@ -144,7 +146,7 @@ export function ConteudosFullstack() {
             <PaginationControlled
               setContentPage={setContentPage}
               page={page}
-              count={6}
+              count={Math.ceil(headers/10)}
             />
           </div>
         </div>

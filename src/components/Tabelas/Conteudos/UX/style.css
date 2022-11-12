@@ -14,10 +14,10 @@
 }
 
 .container-UX {
-    width: 100%;
     min-height: 100%;
     display: flex;
     background-color: #e4e4e9;
+    width: 100vw;
 
 }
 

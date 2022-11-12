@@ -15,7 +15,7 @@
 }
 
 .container-customers {
-    width: 100%;
+    width: 100vw;
     min-height: 100%;
     display: flex;
     background-color: #e4e4e9;

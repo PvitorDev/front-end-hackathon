@@ -16,13 +16,11 @@ const pages = ['Produtos', 'PAGE', 'Blog'];
 const settings = ['Perfil', 'Logout'];
 import { clearLocalItem, getLocalItem } from '../../utils/localStorage';
 import './style.css'
-import { useNavigate } from 'react-router-dom';
 export default function ResponsiveAppBar({ setIsActive }) {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
   const nome_usuario = getLocalItem('nome_usuario')
   const token = getLocalItem('token')
-  const navigate = useNavigate();
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -37,7 +35,7 @@ export default function ResponsiveAppBar({ setIsActive }) {
 
   const handleCloseUserProfile = () => {
     setAnchorElUser(null);
-    setIsActive(true)
+    window.location.href ='/perfil'
   };
 
   const handleCloseUser = () => {
@@ -53,6 +51,10 @@ export default function ResponsiveAppBar({ setIsActive }) {
     const newName = name.substr(0, 2).toUpperCase();
 
     return newName
+  }
+  const openLogin = () =>{
+    setAnchorElUser(null);
+    setIsActive(true)
   }
   return (
     <AppBar position="static" id='appBar'>
@@ -130,7 +132,7 @@ export default function ResponsiveAppBar({ setIsActive }) {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton  sx={{ p: 0 }}>
-                {token ? <Avatar alt="Remy Sharp" onClick={handleOpenUserMenu} src="/static/images/avatar/2.jpg">{formatName(nome_usuario)}</Avatar>   :  <Avatar onClick={handleCloseUserProfile} src="/broken-image.jpg" />}
+                {token ? <Avatar alt="Remy Sharp" onClick={handleOpenUserMenu} src="/static/images/avatar/2.jpg">{formatName(nome_usuario)}</Avatar>   :  <Avatar onClick={openLogin} src="/broken-image.jpg" />}
               </IconButton>
             </Tooltip>
             <Menu

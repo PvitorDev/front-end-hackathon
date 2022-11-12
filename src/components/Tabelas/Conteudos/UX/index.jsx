@@ -22,7 +22,7 @@ export function ConteudosUX() {
   const admin = getLocalItem("admin_usuario");
   const adm = JSON.parse(admin);
   const [filter, setFilter] = useState("");
-
+  const [headers,setHeaders]= useState(0)
   const handleChange = async (event) => {
     setFilter(event.target.value);
   };
@@ -40,6 +40,7 @@ export function ConteudosUX() {
       .then((response) => {
         setLoading(false);
         setData(response.data);
+        setHeaders(response.headers["x-total-count"])
       })
       .catch((error) => {
         setLoading(false);
@@ -148,7 +149,7 @@ export function ConteudosUX() {
             <PaginationControlled
               setContentPage={setContentPage}
               page={page}
-              count={6}
+              count={Math.ceil(headers/10)}
             />
           </div>
         </div>

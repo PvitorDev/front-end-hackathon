@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
 }
 
 #root {
@@ -19,13 +20,8 @@ button {
     cursor: pointer;
 }
 
-.hover-btn-one:hover {
-    background-color: #f91a91;
-}
 
-.hover-btn-two:hover {
-    background-color: #e9e9ef;
-}
+
 
 a {
     color: white;

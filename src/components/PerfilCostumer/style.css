@@ -1,0 +1,26 @@
+.container-table-fav {
+    height: 100%;
+}
+
+.container-table-fav p {
+    font-family: 'Nunito', sans-serif;
+    color: #DA0175;
+    font-size: 15px;
+    margin-top: 6px;
+}
+
+.container-table-fav a {
+    color: #DA0175;
+}
+
+p {
+    margin: 20px;
+}
+
+#tableMain:hover {
+    background-color: rgb(229, 229, 229);
+}
+
+#tableRow {
+    cursor: pointer;
+}
