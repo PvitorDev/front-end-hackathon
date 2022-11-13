@@ -5,9 +5,9 @@ import {Home} from '../src/pages/Home'
 import { ConteudosQA } from '../src/components/Tabelas/Conteudos/QA';
 import {ConteudosFullstack} from '../src/components/Tabelas/Conteudos/Fullstack';
 import { ConteudosUX } from '../src/components/Tabelas/Conteudos/UX';
-import {CustomerDetails} from '../src/components/PerfilDetails'
-import {CustomerCharges} from '../src/components/PerfilCostumer'
+
 import { Details } from '../src/pages/Perfil';
+import { Grafico } from '../src/components/Graficos';
 function ProtectedRoutes({ children }) {
     const isAuthenticated = getLocalItem('token');
 
@@ -25,7 +25,6 @@ export function MainRoutes() {
         <Route path='/trilha/fullstack' element={<ConteudosFullstack/>} />
         <Route path='/trilha/qa' element={<ConteudosQA/>}/>
         <Route path='/trilha/uxui' element={<ConteudosUX/>}/>
-        <Route path= '/login' element={<Login/>} />
         <Route path= '/perfil' element={
             
             <ProtectedRoutes> 
@@ -33,6 +32,7 @@ export function MainRoutes() {
         </ProtectedRoutes>
         
         } />
+        <Route path='/graph' element={<Grafico/>}></Route>
         </Routes>
 
     )

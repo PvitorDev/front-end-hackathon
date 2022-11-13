@@ -25,7 +25,12 @@
     height: 400px;
     margin-right: 24px;
 }
+.h1Title {
+    justify-content: left;
 
+    text-align: justify;
+        margin: auto;
+    }
 .cards-top {
     display: flex;
     justify-content: center;
