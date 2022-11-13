@@ -3,15 +3,18 @@ import api from '../../services/api'
 import { getLocalItem } from '../../utils/localStorage'
 import './style.css'
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
-import { Pie , getElementAtEvent} from 'react-chartjs-2';
+import { Pie } from 'react-chartjs-2';
+import Select from '@mui/joy/Select';
+import Option from '@mui/joy/Option';
 ChartJS.register(ArcElement,Tooltip,Legend)
-
+const style = {
+  width: 300,
+};
 export function Grafico(){
     const [fullstack, setFullstack] = useState([])
     const [qa, setQa] = useState([])
     const [ux, setUx] = useState([])
     const [usuarios, setUsuarios] = useState([])
-    const admin = getLocalItem("admin_usuario")
     const token = getLocalItem("token")
     
     function numFullstack(){
@@ -46,11 +49,16 @@ export function Grafico(){
        numFullstack()
        numQA()
        numUX()
+       
     },[])
     const data = {
         labels: [ 'QA', 'UX-UI', 'Fullstack' ],
+      
         datasets: [
+          
           {
+            
+            
             
             data: [qa.count,ux.count,fullstack.count],
             backgroundColor: [
@@ -70,13 +78,13 @@ export function Grafico(){
         ],
       };
       const chartRef = useRef();
-      const onClick = (event) => {
-        console.log(event);
-      }
+ 
     return(
-       <div>
+      <>
         <h4 className='h4Users'>Total de usuarios: {usuarios}</h4>
-    <Pie ref={chartRef} data={data} onClick={onClick} />
-       </div>
+    <Pie ref={chartRef} data={data}    />
+   
+   
+   </>
     )
 }

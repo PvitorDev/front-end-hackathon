@@ -4,8 +4,10 @@ import './style.css'
 import {getLocalItem} from '../../utils/localStorage.js'
 import Loading from "../loading";
 import EditarPerfil from "../editarPerfil";
+import { Dashboard } from "../Dashboard";
 export  function CustomerDetails() {
     const id_usuario = getLocalItem("usuario_id")
+    const admin = JSON.parse(getLocalItem("admin_usuario"))
     const [loading, setLoading] = useState(true);
     const [data, setData] = useState([]);
     function getPerfil() {
@@ -31,9 +33,9 @@ export  function CustomerDetails() {
             <div className='customerName'>
                 <h1>{data && data.nome}</h1>
             </div>
-
             <div className='customerData'>
                 <div className='customerDataHeader'>
+                  {admin &&   <Dashboard/>}
                     <h3></h3>
                     <EditarPerfil/>
                 </div>

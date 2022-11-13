@@ -27,7 +27,13 @@
     letter-spacing: 0em;
     text-align: left;
 }
-
+.dashboard {
+    padding: 4px 30px 4px 30px;
+    color: #ffffff;
+    display: flex;
+    justify-content: right;
+}
+    
 .customerDataHeader button {
     height: 33px;
     width: 106px;
@@ -35,7 +41,7 @@
     padding: 4px 30px 4px 30px;
     color: #ffffff;
     display: flex;
-    flex-direction: row;
+    flex-direction: right;
     justify-content: center;
     align-items: center;
     background-color: #ffc400;
@@ -43,6 +49,7 @@
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
+    float: right;
 }
 
 .customerDataHeader button:hover {
