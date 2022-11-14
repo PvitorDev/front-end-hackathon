@@ -8,6 +8,7 @@ import { ConteudosUX } from '../src/components/Tabelas/Conteudos/UX';
 
 import { Details } from '../src/pages/Perfil';
 import { Grafico } from '../src/components/Graficos';
+import { Comunidade } from '../src/pages/comunidade';
 function ProtectedRoutes({ children }) {
     const isAuthenticated = getLocalItem('token');
 
@@ -32,7 +33,7 @@ export function MainRoutes() {
         </ProtectedRoutes>
         
         } />
-        <Route path='/graph' element={<Grafico/>}></Route>
+        <Route path='/comunidade' element={<Comunidade/>}></Route>
         </Routes>
 
     )

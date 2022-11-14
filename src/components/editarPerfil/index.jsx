@@ -2,6 +2,7 @@ import { useState } from "react"
 import { toast } from "react-toastify";
 import api from "../../services/api"
 import { getLocalItem } from "../../utils/localStorage"
+import editIcon from '../../assets/editIcon.svg'
 import Modal from '@mui/material/Modal';
 import CloseIcon from '../../assets/closeIcon.svg'
 import Radio from "@mui/material/Radio";

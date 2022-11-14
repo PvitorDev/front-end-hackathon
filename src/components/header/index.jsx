@@ -45,7 +45,7 @@ export default function ResponsiveAppBar({ setIsActive }) {
   const handleCloseUserLogout = () => {
     setAnchorElUser(null);
     clearLocalItem()
-    window.location.reload()
+    window.location.href = "/"
   };
   function formatName(name) {
     const newName = name.substr(0, 2).toUpperCase();

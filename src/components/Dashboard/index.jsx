@@ -17,6 +17,7 @@ const style = {
   };
 import Box from '@mui/material/Box';
   import './style.css'
+import { ListarUsuarios } from "../listarUsuarios";
 
 export function Dashboard(){
     const [open, setOpen] = useState(false);
@@ -40,8 +41,11 @@ export function Dashboard(){
             <img src={CloseIcon} alt="Close Icon"
           className="closeIcon" onClick={handleClose} />
           <Grafico/>
+          <ListarUsuarios/>
          </Box>
         </Modal>
+
+        
         </>
     )
 }

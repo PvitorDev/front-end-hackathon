@@ -4,18 +4,17 @@ import { getLocalItem } from '../../utils/localStorage'
 import './style.css'
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
-import Select from '@mui/joy/Select';
-import Option from '@mui/joy/Option';
+
 ChartJS.register(ArcElement,Tooltip,Legend)
 const style = {
   width: 300,
 };
 export function Grafico(){
+  const token = getLocalItem("token")
     const [fullstack, setFullstack] = useState([])
     const [qa, setQa] = useState([])
     const [ux, setUx] = useState([])
     const [usuarios, setUsuarios] = useState([])
-    const token = getLocalItem("token")
     
     function numFullstack(){
         api.get("usuario/fullstack",{
@@ -57,9 +56,7 @@ export function Grafico(){
         datasets: [
           
           {
-            
-            
-            
+ 
             data: [qa.count,ux.count,fullstack.count],
             backgroundColor: [
              
