@@ -55,10 +55,10 @@ function Carousel({canal}) {
       </div>
       <div className="buttons">
         <button onClick={handleLeftClick}>
-          <HiChevronLeft />
+          <HiChevronLeft  id="arrow" />
         </button>
         <button onClick={handleRightClick}>
-          <HiChevronRight />
+          <HiChevronRight id="arrow" />
         </button>
       </div>
     </div>

@@ -9,7 +9,6 @@ import TabelaQA from '../../components/Tabelas/TabelaQA'
 import TabelaUX from '../../components/Tabelas/TabelaUX'
 import './style.css'
 import Carousel from '../../components/Carousel'
-
 export function Home() {
 
   const [isActive, setIsActive] = useState(false)

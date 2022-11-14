@@ -21,6 +21,7 @@ const style = {
   };
 import Box from '@mui/material/Box';
   import './style.css'
+import { useNavigate } from "react-router-dom";
 export  default function Editar({id_conteudo}){
     const token = getLocalItem('token')
     const admin = getLocalItem("admin_usuario")
@@ -35,7 +36,7 @@ export  default function Editar({id_conteudo}){
         link: "",
       });
 
-
+    const navigate = useNavigate()
     async function HandleAtualizar({id_conteudo}){
         try {
             await api.put(`/postagem?id_conteudo=${id_conteudo}`,{

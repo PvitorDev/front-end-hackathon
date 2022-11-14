@@ -10,8 +10,11 @@
     margin-bottom: 20px;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.277);
     border-color: rgba(208, 213, 221, 1);
+    color: #3F3F55;
 }
-
+.customerName {
+    color: #ed5109;
+}
 .customerDataHeader {
     display: flex;
     align-items: center;
@@ -44,7 +47,7 @@
     flex-direction: right;
     justify-content: center;
     align-items: center;
-    background-color: #ffc400;
+    background-color: #ed5109;
     border-radius: 10px;
     font-style: normal;
     font-weight: 400;
@@ -53,13 +56,9 @@
 }
 
 .customerDataHeader button:hover {
-    background-color: #ffd500;
+    background-color: #ff5100;
 
 }
-
-
-
-
 
 
 .upperCells {

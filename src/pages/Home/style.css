@@ -5,7 +5,7 @@
     align-items: left;
     position: relative;
     min-width: 100vw;
-    background-color: #e4e4e9;
+    background-color: #010C31;
 }
 .cardsMainPage {
     display: flex;
@@ -27,6 +27,7 @@
 }
 .h1Title {
     justify-content: left;
+    color: #ed5109;
 
     text-align: justify;
         margin: auto;
@@ -37,6 +38,7 @@
     gap: 32px;
     
     }
+
     
     .cards-main {
         display: flex;

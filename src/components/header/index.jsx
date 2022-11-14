@@ -11,17 +11,18 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import orangelogo from '../../assets/image0.png'
+import orangelogo from '../../assets/orange.png'
 const pages = ['Produtos', 'PAGE', 'Blog'];
 const settings = ['Perfil', 'Logout'];
 import { clearLocalItem, getLocalItem } from '../../utils/localStorage';
 import './style.css'
+import { useNavigate } from 'react-router-dom';
 export default function ResponsiveAppBar({ setIsActive }) {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
   const nome_usuario = getLocalItem('nome_usuario')
   const token = getLocalItem('token')
-
+  const navigate = useNavigate();
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -35,7 +36,8 @@ export default function ResponsiveAppBar({ setIsActive }) {
 
   const handleCloseUserProfile = () => {
     setAnchorElUser(null);
-    window.location.href ='/perfil'
+    navigate("/perfil")
+   
   };
 
   const handleCloseUser = () => {
@@ -45,7 +47,7 @@ export default function ResponsiveAppBar({ setIsActive }) {
   const handleCloseUserLogout = () => {
     setAnchorElUser(null);
     clearLocalItem()
-    window.location.href = "/"
+    navigate("/")
   };
   function formatName(name) {
     const newName = name.substr(0, 2).toUpperCase();

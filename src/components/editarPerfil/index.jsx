@@ -21,11 +21,13 @@ const style = {
   };
 import Box from '@mui/material/Box';
   import './style.css'
+import { useNavigate } from "react-router-dom";
 export  default function EditarPerfil(){
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
     const id_usuario = getLocalItem("usuario_id")
+    const navigate = useNavigate()
     const token = getLocalItem("token")
     const [form, setForm] = useState({
         nome: "",
@@ -58,7 +60,7 @@ export  default function EditarPerfil(){
                     user: id_usuario
                   } })
             toast.success("atualizado")
-            setTimeout((()=>window.location.reload()),2000)
+            navigate("/")
         } catch (error) {
             console.log(error.response)
             return toast.error(error);

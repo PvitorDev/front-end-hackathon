@@ -62,7 +62,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: #f0a00a;
+    background: #ed5109;
     color: #F8F8F9;
     border-color: #ffffff;
     cursor: pointer;
@@ -72,6 +72,6 @@
 }
 
 .orange-btn:hover {
-    background: #f0b60a;
+    background: #ed5109;
 
 }

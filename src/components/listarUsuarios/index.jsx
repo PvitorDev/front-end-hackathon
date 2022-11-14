@@ -6,7 +6,16 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import {PaginationControlled} from '../pagination'
-import Loading from "../loading";
+import {
+  Table,
+  TableHead,
+  TableBody,
+  TableRow,
+  TableCell,
+  Paper,
+  TableContainer,
+} from "@mui/material";
+import "./style.css"
 export function ListarUsuarios(){
     const token = getLocalItem("token")
     const admin = JSON.parse(getLocalItem("admin_usuario"))
@@ -33,7 +42,8 @@ export function ListarUsuarios(){
             'Authorization': `Bearer ${token}`,
           } })
           .then((response) => {
-            setData(response.data);
+            setData(response.data.usuarios);
+            setUsuarios(response.data.count.count)
           })
           .catch((error) => {
             console.log(error);
@@ -43,7 +53,7 @@ export function ListarUsuarios(){
 
 
 useEffect(()=>{
-    getAllContent("todos")
+    getAllContent()
       
    },[page])
   return(
@@ -76,14 +86,72 @@ useEffect(()=>{
                 </Select>
                 <FormHelperText>Filtrar</FormHelperText>
               </FormControl>
-           
-              <div className="pagination">
+              <TableContainer
+        className="container-table-fav"
+        component={Paper}
+        sx={{
+          borderRadius: "20px",
+          maxWidth: "700px",
+        }}
+      >
+        <Table  id="tableUsers" stickyHeader aria-label="sticky table">
+          <TableHead>
+            <TableRow  >
+              <TableCell align="center" colSpan={5}>
+                <h3>Lista de usuarios</h3>
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>
+                <h4>Nome</h4>
+              </TableCell>
+              <TableCell>
+                <h4>Email</h4>
+              </TableCell>
+              <TableCell>
+                <h4>Trilha</h4>
+              </TableCell>
+              <TableCell>
+                <h4>Função</h4>
+              </TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody
+            sx={{
+              maxWidth: "360px",
+            }}
+          >
+            {data &&
+              data.map((row) => (
+                <TableRow id="tableMain" key={row.id}>
+                  <TableCell
+                    sx={{
+                      maxWidth: "100px",
+                    }}
+                  >
+                    {row.nome}
+                  </TableCell>
+                  <TableCell id="tableEmail">{row.email}</TableCell>
+                  <TableCell>{row.trilha}</TableCell>
+                  <TableCell>{row.funcao}</TableCell>
+                  <TableCell>{row.funcao}</TableCell>
+                  <TableCell>{row.funcao}</TableCell>
+                </TableRow>
+              ))}
+          </TableBody>
+        </Table>
+       
+      </TableContainer>
+     
+      
+      <div className="pagination">
             <PaginationControlled
               setContentPage={setContentPage}
               page={page}
               count={Math.ceil(usuarios/10)}
             />
           </div>
+             
     </>
   )
 }

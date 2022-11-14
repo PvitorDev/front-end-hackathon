@@ -35,7 +35,7 @@ li {
 /* ===== Scrollbar CSS ===== */
 /* Firefox */
 * {
-    scrollbar-width: auto;
+    scrollbar-width: none;
     scrollbar-color: #949494 #ffffff;
 }
 
@@ -44,9 +44,7 @@ li {
     width: 6px;
 }
 
-*::-webkit-scrollbar-track {
-    background: #ffffff;
-}
+
 
 *::-webkit-scrollbar-thumb {
     background-color: #949494;

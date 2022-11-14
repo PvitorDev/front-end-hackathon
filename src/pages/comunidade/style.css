@@ -29,7 +29,7 @@ img {
 }
 
 .publications {
-    width: 650px;
+    width: 600px;
 }
 
 .perfilIcon {
@@ -51,7 +51,7 @@ img {
 }
 
 .conteudosPostagem p {
-    background-color: #ebebeb;
+    background-color: #f6f3f3;
     padding: 20px;
     border-radius: 20px;
 }
@@ -112,7 +112,7 @@ img {
 }
 
 .togglesOnStartPublication div:hover {
-    background: rgb(0, 0, 0, 0.11);
+    background: rgba(122, 71, 71, 0.11);
 }
 
 .togglesOnStartPublication div p {

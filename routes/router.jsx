@@ -7,8 +7,8 @@ import {ConteudosFullstack} from '../src/components/Tabelas/Conteudos/Fullstack'
 import { ConteudosUX } from '../src/components/Tabelas/Conteudos/UX';
 
 import { Details } from '../src/pages/Perfil';
-import { Grafico } from '../src/components/Graficos';
 import { Comunidade } from '../src/pages/comunidade';
+import Postagem from '../src/pages/Postagem';
 function ProtectedRoutes({ children }) {
     const isAuthenticated = getLocalItem('token');
 
@@ -34,6 +34,7 @@ export function MainRoutes() {
         
         } />
         <Route path='/comunidade' element={<Comunidade/>}></Route>
+        <Route path='/postagem' element={<Postagem/>}></Route>
         </Routes>
 
     )

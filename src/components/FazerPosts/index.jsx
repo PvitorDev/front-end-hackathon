@@ -1,8 +1,8 @@
 import "./style.css";
 import { getLocalItem } from "../../utils/localStorage";
 import { useState } from "react";
-import Modal from "@mui/material/Modal";
 import avatar from "../../assets/avatar.png";
+import Modal from "@mui/material/Modal";
 import CloseIcon from "../../assets/closeIcon.svg";
 const style = {
   position: "absolute",
