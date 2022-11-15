@@ -29,9 +29,12 @@ img {
 }
 
 .publications {
+    width: 700px;
+    }
+    
+    .conteudosPostagem {
     width: 600px;
 }
-
 .perfilIcon {
     float: left;
     padding: 10px;
@@ -124,7 +127,7 @@ img {
 .feed {
     width: 100%;
     height: 100%;
-    background: #fff;
+    background: rgb(233, 232, 232);
     margin-top: 1rem;
     margin-bottom: 1rem;
     border-radius: 10px;

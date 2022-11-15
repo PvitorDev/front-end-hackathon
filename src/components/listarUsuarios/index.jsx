@@ -16,6 +16,7 @@ import {
   TableContainer,
 } from "@mui/material";
 import "./style.css"
+import DeletarUsuario from "../excluirUsuario";
 export function ListarUsuarios(){
     const token = getLocalItem("token")
     const admin = JSON.parse(getLocalItem("admin_usuario"))
@@ -114,6 +115,9 @@ useEffect(()=>{
               <TableCell>
                 <h4>Função</h4>
               </TableCell>
+              <TableCell>
+                <h4>Deletar</h4>
+              </TableCell>
             </TableRow>
           </TableHead>
           <TableBody
@@ -134,8 +138,7 @@ useEffect(()=>{
                   <TableCell id="tableEmail">{row.email}</TableCell>
                   <TableCell>{row.trilha}</TableCell>
                   <TableCell>{row.funcao}</TableCell>
-                  <TableCell>{row.funcao}</TableCell>
-                  <TableCell>{row.funcao}</TableCell>
+                  <TableCell><DeletarUsuario id={row.id}/></TableCell>
                 </TableRow>
               ))}
           </TableBody>
@@ -148,9 +151,9 @@ useEffect(()=>{
             <PaginationControlled
               setContentPage={setContentPage}
               page={page}
-              count={Math.ceil(usuarios/10)}
+              count={Math.ceil(usuarios/5)}
             />
-          </div>
+      </div>
              
     </>
   )

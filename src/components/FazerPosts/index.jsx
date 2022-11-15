@@ -23,6 +23,7 @@ import SendIcon from "@mui/icons-material/Send";
 import Radio from "@mui/material/Radio";
 import { toast } from "react-toastify";
 import api from "../../services/api";
+import { useNavigate } from "react-router-dom";
 export default function ModalPostagem({ openModal }) {
   const nome = getLocalItem("nome_usuario");
   const id_usuario = getLocalItem("usuario_id")
@@ -34,6 +35,7 @@ export default function ModalPostagem({ openModal }) {
     descricao: "",
     trilha: "",
   });
+  const navigate = useNavigate()
   function publicOrNot(e) {
     if (form.titulo === "" || form.descricao === "") {
       return (

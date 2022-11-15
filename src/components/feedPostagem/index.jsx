@@ -34,10 +34,11 @@ export default function FeedPostagem(){
         <div className='conteudosPostagem'>
         <h1>{item.titulo}</h1>
         <p>{item.descricao}</p>
-                 {item.descricao.length> 574 &&   <a className='verMais'>ver mais</a> }
+                 
         </div>
 
         <Comentar id_postagem={item.id}/>
+        
         </div>
        ))}
        

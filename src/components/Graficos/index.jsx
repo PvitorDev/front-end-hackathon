@@ -79,7 +79,7 @@ export function Grafico(){
     return(
       <>
         <h4 className='h4Users'>Total de usuarios: {usuarios}</h4>
-    <Pie ref={chartRef} data={data}    />
+    <Pie  ref={chartRef} data={data}    />
    
    
    </>

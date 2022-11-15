@@ -12,7 +12,8 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import orangelogo from '../../assets/orange.png'
-const pages = ['Produtos', 'PAGE', 'Blog'];
+const pages = ['Trilhas', 'Planos de estudos', 'Comunidade'];
+const settingsTrilhas = ['fullstack',"QA","UX/UI"]
 const settings = ['Perfil', 'Logout'];
 import { clearLocalItem, getLocalItem } from '../../utils/localStorage';
 import './style.css'
@@ -58,6 +59,15 @@ export default function ResponsiveAppBar({ setIsActive }) {
     setAnchorElUser(null);
     setIsActive(true)
   }
+  function handleOpenTrilhas (){
+          navigate("/")
+  }
+  function handleClosePlanos(){
+           navigate("/planos")
+  }
+  function handleCloseComunidade(){
+       navigate("/comunidade")
+  }
   return (
     <AppBar position="static" id='appBar'>
       <Container maxWidth="xl">
@@ -92,12 +102,15 @@ export default function ResponsiveAppBar({ setIsActive }) {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+             <MenuItem onClick={handleOpenTrilhas}>
+                  <Typography textAlign="center">TRILHAS</Typography>
                 </MenuItem>
-              ))}
+                <MenuItem onClick={handleClosePlanos}>
+                  <Typography textAlign="center">PLANO DE ESTUDOS</Typography>
+                </MenuItem>
+                <MenuItem onClick={handleCloseComunidade}>
+                  <Typography textAlign="center">COMUNIDADE</Typography>
+                </MenuItem>
             </Menu>
           </Box>
           <a href='/'>
@@ -120,15 +133,15 @@ export default function ResponsiveAppBar({ setIsActive }) {
           >
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                {page}
-              </Button>
-            ))}
+                <MenuItem onClick={handleOpenTrilhas}>
+                  <Typography textAlign="center">TRILHAS</Typography>
+                </MenuItem>
+                <MenuItem onClick={handleClosePlanos}>
+                  <Typography textAlign="center">PLANO DE ESTUDOS</Typography>
+                </MenuItem>
+                <MenuItem onClick={handleCloseComunidade}>
+                  <Typography textAlign="center">COMUNIDADE</Typography>
+                </MenuItem>
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
