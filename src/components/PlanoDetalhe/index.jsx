@@ -91,8 +91,11 @@ useEffect(()=>{
                       maxWidth: "100px",
                     }}
                   >
-                    {row.nome}
+                    {row.titulo}
                   </TableCell>  
+                  <TableCell>{row.tipo}</TableCell>
+                  <TableCell>{row.trilha}</TableCell>
+                  <TableCell>{row.criador_nome}</TableCell>
                 </TableRow>
               ))}
           </TableBody>
