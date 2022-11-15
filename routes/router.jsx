@@ -9,6 +9,7 @@ import { ConteudosUX } from '../src/components/Tabelas/Conteudos/UX';
 import { Details } from '../src/pages/Perfil';
 import { Comunidade } from '../src/pages/comunidade';
 import Postagem from '../src/pages/Postagem';
+import Planos from '../src/pages/Planos';
 function ProtectedRoutes({ children }) {
     const isAuthenticated = getLocalItem('token');
 
@@ -35,6 +36,7 @@ export function MainRoutes() {
         } />
         <Route path='/comunidade' element={<Comunidade/>}></Route>
         <Route path='/postagem' element={<Postagem/>}></Route>
+        <Route path='/planos' element={<Planos/>}></Route>
         </Routes>
 
     )

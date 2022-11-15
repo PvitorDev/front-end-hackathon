@@ -63,7 +63,7 @@ export default function ResponsiveAppBar({ setIsActive }) {
           navigate("/")
   }
   function handleClosePlanos(){
-           navigate("/planos")
+        navigate("/planos")
   }
   function handleCloseComunidade(){
        navigate("/comunidade")
